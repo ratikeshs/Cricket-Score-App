@@ -1,0 +1,76 @@
+<div class="container">
+  <div class="row sm-6">
+    <div class="card w-50 mt-2 ">
+      <!-- <div class="card-header"*ngFor="let cc of batSelect">{{ cc.team1 }}</div> -->
+      <div class="card-header">{{ batSelect }}</div>
+      <div class="card-body">
+        <div ng-controller="MyCtrl">
+        </div>
+        <div class="table-responsive">
+          <table class="table table-hover" id="table">
+            <thead>
+              <tr>
+                <th scope="col">Team1 Players</th>
+                <th scope="col">role</th>
+                <th scope="col"></th>
+              </tr>
+              <tr>
+                <td scope="row"><input type="" class="form-control mb-3" placeholder="Enter player name" id="name1"
+                  name="name1" #name1></td>
+                  <td><input type="" class="form-control mt-0" placeholder="Enter role of player" id="role1" name="role1"
+                    #role1></td>
+                    <td><button type="button" class="btn btn-primary btn-sm" (click)="onAddPlayer1Click()">Add Player</button></td>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let t1 of playername">
+                    <td>{{ t1.name1 }}</td>
+                    <td>{{ t1.role1 }}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        
+        
+        <div class="card w-50 mt-2  ">
+          <div class="card-header">{{ ballSelect}}</div>
+          <div class="card-body">
+            <div ng-controller="MyCtrl">
+            </div>
+            <div class="table-responsive">
+              <table class="table table-hover" id="table">
+                <thead>
+                  <tr>
+                    <th scope="col">Team2 Players</th>
+                    <th scope="col">role</th>
+                    <th scope="col"></th>
+                  </tr>
+                  <tr>
+                    <td><input type="text" class="form-control mt-0" placeholder="Enter player name" id="name2" name="name2"
+                      #name2></td>
+                      <td><input type="" class="form-control mt-0 " placeholder="Enter role of player" id="role2" name="role2"
+                        #role2></td>
+                        <td><button type="button" class="btn btn-primary btn-sm" (click)="onAddPlayer2Click()">Add Player</button></td>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      
+                      <tr *ngFor="let t2 of playername2">
+                        <td>{{ t2.name2 }}</td>
+                        <td>{{ t2.role2 }}</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <button type="button" class="btn btn-primary" (click)="onReadyToPlayClick()">Ready To Play</button>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <router-outlet></router-outlet>

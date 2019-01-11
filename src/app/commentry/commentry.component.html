@@ -1,0 +1,20 @@
+<div class="">
+  <table class="table table-striped " id="mytab1">
+    <thead>
+      <tr>
+        <th scope="col">Overs</th>
+        <th scope="col">Run</th>
+        <th scope="col">Commentry</th>
+      </tr>
+    </thead>
+    
+    <tbody>
+      <tr *ngFor="let ss of commentryData | reverse" >
+        <td scope="col" >{{ss.over }}.{{ ss.ball }}</td>
+        <td scope="col">{{ss.runs }}</td>
+        <td scope="col" >{{ss.description }}</td>
+        
+      </tr>
+    </tbody>
+  </table>
+</div>

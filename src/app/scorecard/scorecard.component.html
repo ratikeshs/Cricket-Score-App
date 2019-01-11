@@ -1,0 +1,74 @@
+
+<!-- Batsmen card -->
+<div class="container mt-3">
+  <div class="card">
+    <div class="card-header">
+      India
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">Batting</h5>
+      <table class="table">
+        <thead>
+          <tr  >
+            <th scope="col" >Batsmen</th>
+            <th scope="col" >Status</th>
+            <th scope="col" >Run</th>
+            <th scope="col" >Ball</th>
+            <th scope="col" >Strike Rate</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let sc of scorecard" >
+            <th scope="row">{{sc.Batsman1}}</th>
+            <td>playing..</td>
+            <td>35</td>
+            <td>26</td>
+            <td>120</td>
+          </tr>
+          <tr *ngFor="let sc of scorecard" >
+            <th scope="row">{{sc.Batsman2}}</th>
+            <td>..</td>
+            <td>..</td>
+            <td>..</td>
+            <td>..</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- Bowler card -->
+
+<div class="container mt-3">
+  <div class="card">
+    <div class="card-header">
+      Bowling
+    </div>
+    <div class="card-body">
+      <h5 class="card-title"></h5>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Bowler</th>
+            <th scope="col">Over</th>
+            <th scope="col">Run</th>
+            <th scope="col">Wicket</th>
+            <th scope="col">Economy</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let sc of scorecard">
+            <th scope="row">{{sc.bowlerName}}</th>
+            <td>..</td>
+            <td>..</td>
+            <td>..</td>
+            <td>..</td>
+          </tr> 
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

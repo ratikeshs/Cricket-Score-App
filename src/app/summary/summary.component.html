@@ -1,0 +1,120 @@
+<div class="container">
+  <div class="col">
+    <div class="card w-50 mt-2 jumbotron btn-block ">
+      <div class="card-header  text-center text-uppercase">Match Started</div>
+      <div class="card-body ">
+        <h3 class="card-title text-center">Live Score</h3>
+        <form class="form-signin">
+          <div class="form-label-group my-2 " *ngIf="showNewBatsman1">
+            <label for="">Select Batsman On Strike </label>
+            <select class="hideLabel form-control col-md-8 ml-5" (change)="onSelectNewBatsman1()" id="name" #Batsman1>
+              <option selected="">select Player</option>
+              <option *ngFor="let cc of selectbowler"> {{ cc.name1 }} </option>
+            </select>
+          </div>
+          <div class="form-label-group my-2 " *ngIf="showNewBatsman2">
+            <label for="">Select New Batsman </label>
+            <select class="hideLabel form-control col-md-8 ml-5" (change)="onSelectNewBatsman2()" id="name" #Batsman2>
+              <option selected="">select Player</option>
+              <option *ngFor="let cc of selectbowler"> {{ cc.name1 }} </option>
+            </select>
+          </div>
+          <div class="form-label-group my-2 " *ngIf="showNewBowler">
+            <label for="">Select New Bowler</label>
+            <select class="hideLabel form-control col-md-8 ml-5" (change)="onSelectNewBowler()" id="name" #bowlerName>
+              <option selected="">select Player</option>
+              <option *ngFor="let cc of selectbowler3"> {{ cc.name2 }} </option>
+            </select>
+          </div>
+          <div class="form-label-group my-2 ">
+            <label>Ball</label>
+            <div>
+              <input type="text" class="col-md-8 ml-5" [value]="ballnum" [disabled]="txtBall" #ball>
+            </div>
+          </div>
+          <div class="form-label-group ">
+            <label> Runs Per Ball</label>
+            <select id="run" class="hideLabel form-control col-md-8 ml-5" (change)="onSelectOfPossibility()" #runs>
+              <option hidden value="default">Select Run</option>
+              <option>
+                0
+              </option>
+              <option>
+                1
+              </option>
+              <option>
+                2
+              </option>
+              <option>
+                3
+              </option>
+              <option>
+                4
+              </option>
+              <option>
+                6
+              </option>
+              <option>
+                Wicket
+              </option>
+            </select>
+          </div>
+          <div class="form-label-group my-2 " *ngIf="showType">
+            <label for="">Wicket</label>
+            <select class="hideLabel form-control col-md-8 ml-5" [disabled]="btnDisable" (change)="onSelectOfWicket()"
+            #wicketType>
+            <option selected="">Select Wicket</option>
+            <option>
+              Catch
+            </option>
+            <option>
+              Bold
+            </option>
+            <option>
+              Runout
+            </option>
+            <option>
+              Stumping
+            </option>
+            <option>
+              Hitwicket
+            </option>
+          </select>
+        </div>
+        <div class="form-label-group my-2 " *ngIf="showCatchBy">
+          <label for="">Catch By</label>
+          <select class="hideLabel form-control col-md-8 ml-5" (change)="onSelectCatch()" [disabled]="btnCatchByDisable"
+          id="name" #caughtBy>
+          <option selected="">select Player</option>
+          <option *ngFor="let cc of selectbowler3"> {{ cc.name2 }} </option>
+        </select>
+      </div>
+      <div class="form-label-group my-2 " *ngIf="showRunOutBy">
+        <label for="">Runout By</label>
+        <select class="hideLabel form-control col-md-8 ml-5" (change)="onSelectRunOut()" [disabled]="btnCatchByDisable"
+        id="name" #runOutBy>
+        <option selected="">select Player</option>
+        <option *ngFor="let cc of selectbowler3"> {{ cc.name2 }}
+        </option>
+      </select>
+    </div>
+    <div class="form-label-group my-2 ">
+      <label for="">Total Number Of Overs</label>
+      <div>
+        <input type="text" class="col-md-8 ml-5" [value]="numofovers" [disabled]="txtOver" #over>
+      </div>
+    </div>
+    <div class="form-label-group my-2 ">
+      <label for="">Commentry</label>
+      <div>
+        <textarea class="col-md-8 ml-5" #description></textarea>
+      </div>
+    </div>
+    <button class="btn btn-lg btn-primary btn-block text-uppercase col-md-8 ml-5" type="button" (click)="onAddScoreClick()">Add
+      Score</button>
+    </form>
+  </div>
+</div>
+</div>
+</div>
+<router-outlet></router-outlet>

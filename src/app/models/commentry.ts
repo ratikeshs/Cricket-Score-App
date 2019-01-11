@@ -1,0 +1,36 @@
+export class Commentry{
+    Batsman1:string;
+    Batsman2:string;
+    bowlerName:string;
+    ball:any;
+    runs:any;
+    wicketType:string;
+    over:any;
+    description:string;
+    caughtBy?:string;
+    runOutBy?:string;
+    
+    constructor(
+        Batsman1:string,
+        Batsman2:string,
+        bowlerName:string,
+        ball:any,
+        runs:any,
+        wicketType:string,
+        over:any,
+        description:string,
+        caughtBy?:string,
+        runOutBy?:string)
+        {
+            this.Batsman1=Batsman1;
+            this.Batsman2=Batsman2
+            this.bowlerName=bowlerName;
+            this.ball=ball;
+            this.runs=runs;
+            this.wicketType=wicketType;
+            this.over=over;
+            this.description=description;
+            this.caughtBy=caughtBy;
+            this.runOutBy=runOutBy;
+        }
+}

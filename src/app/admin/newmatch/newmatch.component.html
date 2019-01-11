@@ -1,0 +1,43 @@
+<div class="container">
+    <div class="col">
+        <div class="card w-50 mt-2 ">
+            <div class="card-header">New Match</div>
+            <div class="card-body">
+                <div ng-controller="MyCtrl">
+                    <form>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <input type="text" class="form-control" placeholder="Enter name of Team 1" (blur)="onSelectTeam1()"
+                                    #team1>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <input type="text" class="form-control" placeholder="Enter name of Team 2" (input)="onSelectTeam2()"
+                                    #team2>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <select class="custom-select form-control ml-0" (change)="onDesc1()" #toss [disabled]="btnDisable">
+                                    <option selected>select Toss</option>
+                                    <option> {{te1}}</option>
+                                    <option> {{te2}}</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <select class="custom-select mr-sm-2" (change)="onDesc()" #decision>
+                                    <option selected>select Bat/Bowl</option>
+                                    <option>Batting</option>
+                                    <option>Bowling</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <input type="text" class="form-control" placeholder="Enter number of overs" #overs>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <button type="button" class="btn btn-primary" (click)="onDefineTeamClick()">Define Teams</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<router-outlet></router-outlet>
